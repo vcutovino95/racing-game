@@ -8,7 +8,10 @@ public class Car extends  AutoVehicle {
         super(engine);
     }
 
+    public Car() {
+        super();
 
+    }
 }
 
 
