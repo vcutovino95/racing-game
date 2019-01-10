@@ -4,4 +4,18 @@ import org.fasttrackit.Vehicle;
 
 public class UFO extends Vehicle {
 
+    @Override
+    public double accelerate(double speed, double durationInHours) {
+        System.out.println("Accelerating as UFO");
+        System.out.println(getName() + " accelerated with " + speed +
+                " km/h for " + durationInHours + " hours.");
+
+        double traveledDistance = speed * durationInHours;
+
+        System.out.println("Traveled distance: " + traveledDistance + " km.");
+
+        return traveledDistance;
+
+
+    }
 }

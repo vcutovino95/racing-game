@@ -11,6 +11,8 @@ public class AutoVehicle extends Vehicle {
     }
 
 
+
+
     public AutoVehicle() {
 
       //  this.engine = new Engine();
@@ -18,6 +20,14 @@ public class AutoVehicle extends Vehicle {
 
 
 
+    }
+
+    @Override
+    public String toString() {
+        return "AutoVehicle{" +
+                "engine=" + engine +
+                ", running=" + running +
+                "} " + super.toString();
     }
 }
 

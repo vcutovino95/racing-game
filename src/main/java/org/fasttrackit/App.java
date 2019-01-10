@@ -1,23 +1,27 @@
 package org.fasttrackit;
 
-import java.sql.SQLOutput;
+import org.fasttrackit.cheater.UFO;
+
 import java.time.LocalDateTime;
 
 
 public class App {
     public static void main(String[] args) {
-//        Engine engine = new Engine();
-//        engine.manufacturer = "Renault";
-//        engine.capacity = 1500;
-//        engine.expiryDate =
-//                LocalDateTime.now().plusYears(10);
-//
-//        Car car = new Car(engine);
-//        car.setName("    Dacia     ");
-//        car.setColor("White");
-//        car.doorCount = 4;
-//        car.setMileage(7.5);
-//        car.running = true;
+        Engine engine = new Engine();
+        engine.manufacturer = "Renault";
+        engine.capacity = 1500;
+        engine.expiryDate =
+                LocalDateTime.now().plusYears(10);
+
+        Car car = new Car(engine);
+        car.setName("    Dacia     ");
+        car.setColor("White");
+        car.doorCount = 4;
+        car.setMileage(7.5);
+        car.running = true;
+
+
+        System.out.println(car.toString());
 //
 //        System.out.println(car.getName());
 //
@@ -63,8 +67,12 @@ public class App {
         new AutoVehicle(new Engine());
 
         // example of invoking overloaded methods
-        vehicle1.accelerate(32.12);
+        vehicle1.accelerate(34.12);
         vehicle2.accelerate(130,0.8);
 
+        new UFO().accelerate(130,0.8);
+
+
     }
+
 }
