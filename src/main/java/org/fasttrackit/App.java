@@ -57,5 +57,14 @@ public class App {
 
 
 
+        new AutoVehicle();
+
+
+        new AutoVehicle(new Engine());
+
+        // example of invoking overloaded methods
+        vehicle1.accelerate(32.12);
+        vehicle2.accelerate(130,0.8);
+
     }
 }
