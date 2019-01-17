@@ -34,16 +34,14 @@ public class Vehicle {
         return accelerate(speed, 1);
 
     }
-        protected Vehicle clone (){
-            Vehicle vehicle = new Vehicle();
-            //copy properties from current object or simply call this.clone();
-            return vehicle;
+
+    protected Vehicle clone() {
+        Vehicle vehicle = new Vehicle();
+        //copy properties from current object or simply call this.clone();
+        return vehicle;
 
 
-
-        }
-
-
+    }
 
 
     public String getName() {

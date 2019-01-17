@@ -7,6 +7,12 @@ import java.time.LocalDateTime;
 
 public class App {
     public static void main(String[] args) {
+
+        Game game = new Game();
+        game.start();
+
+
+
         Engine engine = new Engine();
         engine.manufacturer = "Renault";
         engine.capacity = 1500;
