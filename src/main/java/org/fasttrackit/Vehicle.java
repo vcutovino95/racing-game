@@ -96,4 +96,14 @@ public class Vehicle {
                 ", mileage=" + mileage +
                 '}';
     }
+
+    public double getTotalTraveledDistance() {
+        return totalTraveledDistance;
+    }
+
+    public void setTotalTraveledDistance(double totalTraveledDistance) {
+        this.totalTraveledDistance = totalTraveledDistance;
+    }
+
+
 }

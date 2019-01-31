@@ -24,8 +24,62 @@ public class Game {
         displayAvailableTrack();
 
 
+        int numberFromUser = getTrackNumberFromUser();
+        Track track = tracks[numberFromUser - 1];
+        System.out.println("Selected track:" + track.getName());
+
+        boolean noWinnerYet = true;
+        int competitorsWithoutFuel = 0;
 
 
+
+
+
+        while (noWinnerYet) {
+            for (Vehicle vehicle : competitors) {
+                double speed = getAccelerationSpeedFromUser();
+                vehicle.accelerate(speed);
+
+                if (vehicle.getTotalTraveledDistance() >= track.getLength()) {
+
+                    System.out.println("Congrats! The winner is " +
+                            vehicle.getName());
+                    noWinnerYet = false;
+                    break;
+
+
+                }
+            }
+        }
+    }
+
+    private int getTrackNumberFromUser() {
+
+        System.out.println("Give number:");
+        Scanner scanner = new Scanner(System.in);
+        try {
+            return scanner.nextInt();
+
+        } catch (InputMismatchException exception) {
+            System.out.println("Please re-enter");
+            return getTrackNumberFromUser();
+
+        }
+    }
+
+    private double getAccelerationSpeedFromUser() {
+
+        System.out.println("Please enter acceleration speed:");
+        Scanner scanner = new Scanner(System.in);
+        try {
+            return scanner.nextDouble();
+
+
+        } catch (InputMismatchException exception) {
+            System.out.println("Please enter a valid decimal number.");
+            return getAccelerationSpeedFromUser();
+
+        }
     }
 
 
@@ -69,10 +123,13 @@ public class Game {
             return numberOfPlayers;
         } catch (InputMismatchException exception) {
 
-            throw new Exception("Integer required.");
+            // throw new Exception("Integer required.");
+            System.out.println("Please enter a valid integer.");
+            return getCompetitorCountFromUser();
         }
 
     }
+
 
     private void displayCompetitors() {
 
