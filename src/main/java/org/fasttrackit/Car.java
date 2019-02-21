@@ -10,7 +10,13 @@ public class Car extends  AutoVehicle {
 
     public Car() {
         super();
+    }
 
+    @Override
+    public String toString() {
+        return "Car{" +
+                "doorCount=" + doorCount +
+                "} " + super.toString();
     }
 }
 

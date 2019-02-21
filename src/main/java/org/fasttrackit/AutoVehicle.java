@@ -10,16 +10,9 @@ public class AutoVehicle extends Vehicle {
         this.engine = engine;
     }
 
-
-
-
     public AutoVehicle() {
-
-      //  this.engine = new Engine();
-        this (new Engine());
-
-
-
+//        this.engine = new Engine();
+        this(new Engine());
     }
 
     @Override
@@ -27,7 +20,6 @@ public class AutoVehicle extends Vehicle {
         return "AutoVehicle{" +
                 "engine=" + engine +
                 ", running=" + running +
-                "} " + super.toString();
+                '}';
     }
 }
-

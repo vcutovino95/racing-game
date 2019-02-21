@@ -4,23 +4,14 @@ public class Vehicle {
 
     public static int vehicleCount;
 
-
     private String name;
     private String color;
     private double mileage;
     private double fuelLevel;
     private double totalTraveledDistance;
 
-
-
-
-
     public Vehicle() {
-
-
         vehicleCount++;
-
-
     }
 
     public double accelerate(double speed, double durationInHours) {
@@ -43,25 +34,16 @@ public class Vehicle {
         return traveledDistance;
     }
 
-
-
-
-
-
     // example of method overloading
     public double accelerate(double speed) {
         return accelerate(speed, 1);
-
     }
 
     protected Vehicle clone() {
         Vehicle vehicle = new Vehicle();
-        //copy properties from current object or simply call this.clone();
+        // copy properties from current object or simply call this.clone();
         return vehicle;
-
-
     }
-
 
     public String getName() {
         return name;
@@ -85,16 +67,14 @@ public class Vehicle {
 
     public void setMileage(double mileage) {
         this.mileage = mileage;
-
     }
 
-    @Override
-    public String toString() {
-        return "Vehicle{" +
-                "name='" + name + '\'' +
-                ", color='" + color + '\'' +
-                ", mileage=" + mileage +
-                '}';
+    public double getFuelLevel() {
+        return fuelLevel;
+    }
+
+    public void setFuelLevel(double fuelLevel) {
+        this.fuelLevel = fuelLevel;
     }
 
     public double getTotalTraveledDistance() {
@@ -105,5 +85,12 @@ public class Vehicle {
         this.totalTraveledDistance = totalTraveledDistance;
     }
 
-
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "name='" + name + '\'' +
+                ", color='" + color + '\'' +
+                ", mileage=" + mileage +
+                '}';
+    }
 }

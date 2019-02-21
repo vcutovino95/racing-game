@@ -5,7 +5,6 @@ public class Track {
     private String name;
     private double length;
 
-
     public Track(String name, double length) {
         this.name = name;
         this.length = length;

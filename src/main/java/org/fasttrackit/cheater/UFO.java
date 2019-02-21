@@ -10,30 +10,21 @@ public class UFO extends Vehicle {
         System.out.println(getName() + " accelerated with " + speed +
                 " km/h for " + durationInHours + " hours.");
 
-        double traveledDistance = speed * durationInHours;
+        double traveledDistance = 2 * speed * durationInHours;
 
         System.out.println("Traveled distance: " + traveledDistance + " km.");
 
         return traveledDistance;
-
-
     }
 
-        public void concealCheating(){
-
-            System.out.println("I`m not cheating!");
-
-
+    public void concealCheating() {
+        System.out.println("I'm not cheating!");
     }
-
 
     // example of co-variant return type
-    // example of extending access privileges in overridden method
-
+    // example of extending access priveleges in overridden method
     @Override
-
     public UFO clone() {
         return new UFO();
-
     }
 }
