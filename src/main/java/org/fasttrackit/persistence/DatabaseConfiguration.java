@@ -13,25 +13,25 @@ public class DatabaseConfiguration {
 
         Properties properties = new Properties();
 
-
-        InputStream inputStream = DatabaseConfiguration.class
+        //try with resources
+        try (InputStream inputStream = DatabaseConfiguration.class
                 .getClassLoader()
-                .getResourceAsStream("db.properties");
+                .getResourceAsStream("db.properties")) {
 
 
-        properties.load(inputStream);
+            properties.load(inputStream);
 
-        //load driver class
-        Class.forName(properties.getProperty("DB_DRIVER_CLASS"));
-
-
-       return DriverManager.getConnection(
-                properties.getProperty("DB_URL"),
-                properties.getProperty("DB_USERNAME"),
-                properties.getProperty("DB_PASSWORD"));
+            //load driver class
+            Class.forName(properties.getProperty("DB_DRIVER_CLASS"));
 
 
+            return DriverManager.getConnection(
+                    properties.getProperty("DB_URL"),
+                    properties.getProperty("DB_USERNAME"),
+                    properties.getProperty("DB_PASSWORD"));
 
+
+        }
 
 
     }

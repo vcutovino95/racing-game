@@ -12,20 +12,21 @@ public class TopWinnerRepositoy {
     public void createTopEntry(TopWinner topWinner) throws SQLException, IOException, ClassNotFoundException {
 
 
-        Connection connection = DatabaseConfiguration.getConnection();
+        try (Connection connection = DatabaseConfiguration.getConnection()) {
 
-        String insertSql = "INSERT INTO top_winners (`name`, wonRaces) VALUES(?,?)" +
-                "ON DUPLICATED KEY UPDATE wonRaces = wonRaces +1;";
-
-
-        PreparedStatement preparedStatement = connection.prepareStatement(insertSql);
-
-        preparedStatement.setString(1, topWinner.getName());
-        preparedStatement.setInt(2, topWinner.getWonRaces());
+            String insertSql = "INSERT INTO top_winners (`name`, wonRaces) VALUES(?,?)" +
+                    "ON DUPLICATED KEY UPDATE wonRaces = wonRaces +1;";
 
 
-        preparedStatement.executeUpdate();
+            PreparedStatement preparedStatement = connection.prepareStatement(insertSql);
 
+            preparedStatement.setString(1, topWinner.getName());
+            preparedStatement.setInt(2, topWinner.getWonRaces());
+
+
+            preparedStatement.executeUpdate();
+
+        }
 
     }
 
